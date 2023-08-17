@@ -13,7 +13,7 @@ namespace sistema_gestao_estudantes
     {
         MEU_BD bancoDeDados = new MEU_BD();
 
-        // Função que inclui o estudante no banco de dados.
+        // Função que inclui o estudante no banco de dadosgvhjghx.
         public bool inserirEstudante(string nome, string sobrenome,
             DateTime nascimento, string telefone, string genero,
             string endereco, MemoryStream foto) 
