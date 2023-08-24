@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace sistema_gestao_estudantes
 {
@@ -41,12 +42,13 @@ namespace sistema_gestao_estudantes
                 return false;
             }
         }
-        public bool AtualizarEstudante(string nome, string sobrenome,
+        public bool AtualizarEstudante( int id , string nome, string sobrenome,
             DateTime nascimento, string telefone, string genero,
             string endereco, MemoryStream foto)
         {
             MySqlCommand comando = new MySqlCommand("INSERT INTO `estudantes`(`nome`, `sobrenome`, `nascimento`, `genero`, `te(@nmlefone`, `endereco`, `foto`) VALUES ,(@sbn,@nsc,@gen,@tel,@end,@ft)", bancoDeDados.getConexao);
 
+            comando.Parameters.Add("@id", MySqlDbType.Int32).Value = id;
             comando.Parameters.Add("@nm", MySqlDbType.VarChar).Value = nome;
             comando.Parameters.Add("@sbn", MySqlDbType.VarChar).Value = sobrenome;
             comando.Parameters.Add("@nsc", MySqlDbType.Date).Value = nascimento;
@@ -69,7 +71,29 @@ namespace sistema_gestao_estudantes
             }
         }
 
-        public DataTable getEstudantes(MySqlCommand comando)
+        // Deletar o estudante 
+
+        public bool deletarEstudante(int id)
+        {
+            MySqlCommand COMANDO =
+                new MySqlCommand("DELETE FROM `estudante` WHERE `id` = @studentid");
+            COMANDO.Parameters.Add("studentid", MySqlDbType.Int32).Value = id;
+
+            bancoDeDados.abrirConexao();
+
+            if (COMANDO.ExecuteNonQuery() == 1)
+            {
+                bancoDeDados.fecharConexao();
+                return true;
+            }
+            else
+            {
+                bancoDeDados.fecharConexao();
+                return false; 
+            }
+        }
+
+        public DataTable pegarEstudantes(MySqlCommand comando)
         {
             comando.Connection = bancoDeDados.getConexao;
             MySqlDataAdapter adaptador = new MySqlDataAdapter(comando);
