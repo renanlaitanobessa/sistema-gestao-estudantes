@@ -21,5 +21,22 @@ namespace sistema_gestao_estudantes
         {
 
         }
-    }
+
+        private void pictureBoxFoto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonEnviarFoto_Click(object sender, EventArgs e)
+        {
+            // Pesquisa pela imagem no computador.
+            OpenFileDialog abrirArquivo = new OpenFileDialog();
+            abrirArquivo.Filter =
+                "Seleciona a Foto(*.jpg;*.png;*.gif)|*.jpg;*.png;*.gif";
+            if (abrirArquivo.ShowDialog() == DialogResult.OK)
+            {
+                pictureBoxFoto.Image = Image.FromFile(abrirArquivo.FileName);
+            }
+        }
+    }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
 }
