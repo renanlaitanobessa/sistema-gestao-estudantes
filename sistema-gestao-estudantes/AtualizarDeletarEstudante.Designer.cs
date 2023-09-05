@@ -40,7 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.radioButtonMasculino = new System.Windows.Forms.RadioButton();
             this.radioButtonFeminino = new System.Windows.Forms.RadioButton();
-            this.label6 = new System.Windows.Forms.Label();
+            this.Endereco = new System.Windows.Forms.Label();
             this.textBoxTelefone = new System.Windows.Forms.TextBox();
             this.labelFoto = new System.Windows.Forms.Label();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
@@ -48,7 +48,7 @@
             this.buttonRemover = new System.Windows.Forms.Button();
             this.buttonConfirmar = new System.Windows.Forms.Button();
             this.Telefone = new System.Windows.Forms.Label();
-            this.textBoxEndereço = new System.Windows.Forms.TextBox();
+            this.textBoxEndereco = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
             this.SuspendLayout();
             // 
@@ -164,15 +164,15 @@
             this.radioButtonFeminino.Text = "Feminino";
             this.radioButtonFeminino.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // Endereco
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 312);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 18);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Endereço";
+            this.Endereco.AutoSize = true;
+            this.Endereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Endereco.Location = new System.Drawing.Point(12, 312);
+            this.Endereco.Name = "Endereco";
+            this.Endereco.Size = new System.Drawing.Size(80, 18);
+            this.Endereco.TabIndex = 13;
+            this.Endereco.Text = "Endereco";
             // 
             // textBoxTelefone
             // 
@@ -231,6 +231,7 @@
             this.buttonConfirmar.TabIndex = 19;
             this.buttonConfirmar.Text = "Confirmar";
             this.buttonConfirmar.UseVisualStyleBackColor = true;
+            this.buttonConfirmar.Click += new System.EventHandler(this.buttonConfirmar_Click);
             // 
             // Telefone
             // 
@@ -242,19 +243,19 @@
             this.Telefone.TabIndex = 20;
             this.Telefone.Text = "Telefone";
             // 
-            // textBoxEndereço
+            // textBoxEndereco
             // 
-            this.textBoxEndereço.Location = new System.Drawing.Point(112, 313);
-            this.textBoxEndereço.Name = "textBoxEndereço";
-            this.textBoxEndereço.Size = new System.Drawing.Size(131, 20);
-            this.textBoxEndereço.TabIndex = 21;
+            this.textBoxEndereco.Location = new System.Drawing.Point(112, 313);
+            this.textBoxEndereco.Name = "textBoxEndereco";
+            this.textBoxEndereco.Size = new System.Drawing.Size(131, 20);
+            this.textBoxEndereco.TabIndex = 21;
             // 
             // AtualizarDeletarEstudante
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBoxEndereço);
+            this.Controls.Add(this.textBoxEndereco);
             this.Controls.Add(this.Telefone);
             this.Controls.Add(this.buttonConfirmar);
             this.Controls.Add(this.buttonRemover);
@@ -262,7 +263,7 @@
             this.Controls.Add(this.pictureBoxFoto);
             this.Controls.Add(this.labelFoto);
             this.Controls.Add(this.textBoxTelefone);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.Endereco);
             this.Controls.Add(this.radioButtonFeminino);
             this.Controls.Add(this.radioButtonMasculino);
             this.Controls.Add(this.label5);
@@ -277,6 +278,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AtualizarDeletarEstudante";
             this.Text = "v";
+            this.Load += new System.EventHandler(this.AtualizarDeletarEstudante_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -290,7 +292,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label Endereco;
         private System.Windows.Forms.Label Telefone;
         internal System.Windows.Forms.Button button1;
         internal System.Windows.Forms.TextBox textBoxID;
@@ -303,7 +305,7 @@
         internal System.Windows.Forms.Button buttonEnviarFoto;
         internal System.Windows.Forms.Button buttonRemover;
         internal System.Windows.Forms.Button buttonConfirmar;
-        internal System.Windows.Forms.TextBox textBoxEndereço;
+        internal System.Windows.Forms.TextBox textBoxEndereco;
         internal System.Windows.Forms.RadioButton radioButtonMasculino;
         internal System.Windows.Forms.RadioButton radioButtonFeminino;
     }
