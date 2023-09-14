@@ -71,6 +71,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Procurar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.buttonProcurar);
             // 
             // textBoxID
             // 
@@ -131,6 +132,7 @@
             this.dateTimePickerNascimento.Name = "dateTimePickerNascimento";
             this.dateTimePickerNascimento.Size = new System.Drawing.Size(200, 20);
             this.dateTimePickerNascimento.TabIndex = 9;
+            this.dateTimePickerNascimento.ValueChanged += new System.EventHandler(this.dateTimePickerNascimento_ValueChanged);
             // 
             // label5
             // 
@@ -221,6 +223,7 @@
             this.buttonRemover.TabIndex = 18;
             this.buttonRemover.Text = "Remover";
             this.buttonRemover.UseVisualStyleBackColor = true;
+            this.buttonRemover.Click += new System.EventHandler(this.buttonRemover_Click);
             // 
             // buttonConfirmar
             // 

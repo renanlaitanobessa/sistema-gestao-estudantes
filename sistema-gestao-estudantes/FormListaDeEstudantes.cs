@@ -53,7 +53,7 @@ namespace sistema_gestao_estudantes
             }
 
             atualizarDeletarEstudante.textBoxTelefone.Text = dataGridViewLista.CurrentRow.Cells[5].Value.ToString();
-            atualizarDeletarEstudante.textBoxEndereço.Text = dataGridViewLista.CurrentRow.Cells[6].Value.ToString();
+            atualizarDeletarEstudante.textBoxEndereco.Text = dataGridViewLista.CurrentRow.Cells[6].Value.ToString();
 
 
             // A foto : 
